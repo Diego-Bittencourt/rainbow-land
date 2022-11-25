@@ -1,6 +1,6 @@
 <template>
-    <div class="fixed top-0 w-full">
-        <header class=" bg-emerald-800 bg-opacity-70 ">
+    <div class="w-full">
+        <header class="fixed top-0 w-full bg-emerald-800 bg-opacity-70 ">
             <nav class="flex h-24 w-5/6 m-auto p-4">
                 <div class="flex-none"><img src="https://via.placeholder.com/200x70" alt="Rainbow Land Logo"/></div>
                 <ul class="list-none flex flex-auto items-stretch justify-around ml-24">
