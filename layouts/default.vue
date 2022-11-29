@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <header class="fixed top-0 w-full bg-emerald-800 bg-opacity-70 ">
-            <nav class="flex h-24 w-5/6 m-auto p-4">
+            <nav class="flex h-24 w-5/6 m-auto p-4 justify-between">
                 <div class="flex-none"><img src="https://via.placeholder.com/200x70" alt="Rainbow Land Logo"/></div>
                 <ul class="list-none flex flex-auto items-stretch justify-around ml-24">
                     <NuxtLink to="/index"><li>Home</li></NuxtLink>
@@ -21,12 +21,19 @@
 
 <style scoped>
 li {
-    @apply flex items-stretch;
+    @apply flex items-stretch text-white font-bold text-xl;
+}
+
+ul {
+    @apply max-w-lg;
 }
 
 ul > * {
     @apply flex-grow border-solid flex items-center justify-around text-center hover:bg-slate-200 hover:bg-opacity-30 transition duration-200 ease-in;
 }
 
+header {
+    z-index: 10;
+}
 
 </style>

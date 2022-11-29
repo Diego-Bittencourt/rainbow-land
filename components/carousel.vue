@@ -5,7 +5,9 @@
                 <span @click="setIndex(photo.index)" v-for="photo of photos" :key="photo.index"></span>
             </div>
             <div class="carousel-item"  v-for="photo of photos" :key="photo.index" >
+                <transition name="carousel">
                 <img v-if="photo.index === currentIndex" :src="photo.link"/>
+                </transition>
             </div>
         </div>
     </div>
@@ -48,6 +50,28 @@ function setIndex(number:number) {
 </script>
 
 <style scoped>
+
+.carousel-enter-from {
+    transform: translateX(100vw);
+}
+
+.carousel-enter-to {
+    transform: translateX(0);
+}
+
+
+.carousel-leave-from {
+    transform: translateX(0);
+}
+
+.carousel-leave-to {
+    transform: translateX(-100vw);
+}
+
+.carousel-leave-active,
+.carousel-enter-active {
+    transition: all 1.5s ease-in-out;
+}
 .carousel {
     width: 100vw;
     height: 100vh;
@@ -69,6 +93,7 @@ img {
 }
 
 .carousel-item {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -81,7 +106,7 @@ img {
 
 .toggle-carousel {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     top: 90vh;
     left: 50%;
     transform: translateX(-50%);
