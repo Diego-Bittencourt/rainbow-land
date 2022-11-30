@@ -29,7 +29,7 @@ ul {
 }
 
 ul > * {
-    @apply flex-grow border-solid flex items-center justify-around text-center hover:bg-slate-200 hover:bg-opacity-30 transition duration-200 ease-in;
+    @apply  border-x-transparent border-x flex-grow border-solid flex items-center justify-around text-center hover:bg-slate-200 hover:bg-opacity-30 hover:border-gray-200 transition duration-200 ease-in;
 }
 
 header {

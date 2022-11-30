@@ -5,6 +5,12 @@
                 <span @click="setIndex(photo.index)" :class="photo.index === currentIndex ? 'active-button' : null" v-for="photo of photos" :key="photo.index"></span>
             </div>
             <div class="carousel-item"  v-for="photo of photos" :key="photo.index" >
+                <transition name="carousel-text" mode="in-out">
+                    <div v-if="photo.index === currentIndex" class="textwrapper">
+                    <h1 class="text">{{ photo.text.toUpperCase() }}</h1>
+                    <p class="comment">{{ photo.comment }}</p>
+                    </div>
+                </transition>
                 <transition name="carousel">
                 <img v-if="photo.index === currentIndex" :src="photo.link"/>
                 </transition>
@@ -24,7 +30,6 @@ onMounted(() => {
             currentIndex.value = 1;
         } else {
             currentIndex.value++;
-            console.log("interval");
         }
     }, 3000)
     
@@ -43,33 +48,68 @@ function setIndex(number:number) {
     const photos = ref([
         {
             index: 1,
-            link:'/img/carousel01.png'
+            link:'/img/carousel01.png',
+            text: 'Rainbow Land',
+            comment: 'WHERE ALL COLORS SHINE'
         },
         {
             index: 2,
-            link: '/img/carousel02.png'
+            link: '/img/carousel02.png',
+            text: 'Nature',
+            comment:'Fun for the whole family'
         },
         {
             index: 3,
-            link: '/img/carousel03.png'
+            link: '/img/carousel03.png',
+            text: 'English',
+            comment: 'Immersed in a english speaking enviromnment'
         },
         {
             index: 4,
-            link: '/img/carousel04.png'
+            link: '/img/carousel04.png',
+            text: 'Take a Break',
+            comment: 'Connect with loved ones and nature'
         },
         {
             index: 5,
-            link: '/img/carousel05.png'
+            link: '/img/carousel05.png',
+            text: 'Enjoy New Zealand',
+            comment: 'A welcoming and multicultural country'
         },
         {
             index: 6,
-            link: '/img/carousel06.png'
+            link: '/img/carousel06.png',
+            text: 'Warm Christmas',
+            comment: 'Enjoy a warm December day by the river and waterfall'
         }
     ]);
 </script>
 
 <style scoped>
+.carousel-text-enter-from {
+    opacity: 0;
+    transform: translateY(-30px);
+}
 
+.carousel-text-enter-to,
+.carousel-text-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-text-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+
+}
+
+.carousel-text-enter-active {
+    transition: all 1.5s ease-in-out;
+}
+
+.carousel-text-leave-active {
+    transition: all 0.3s;
+}
 
 .carousel-enter-from {
     transform: translateX(100vw);
@@ -160,6 +200,29 @@ img {
     box-shadow: 0px 0px 8px 9px #ffffffaa;
 }
 
+.textwrapper {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ddd;
+    z-index: 15;
+    width: 35%;
+    text-shadow: 2px 2px #2a2a2a;
+}
+
+.text {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.comment {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+
 
 @media screen and (max-width: 720px) {
     .toggle-carousel > * {
@@ -167,6 +230,16 @@ img {
         height: 10px;
     }
 
+    .textwrapper {
+        top: 35%;
+    }
+    .text {
+        font-size: 2rem;
+    }
+
+    .comment {
+        font-size: 1rem;
+    }
     .toggle-carousel {
         bottom: 2%;
     }
@@ -187,11 +260,21 @@ img {
 
     .active-button {
     box-shadow: 0px 0px 3px 2px #be0606cc;
-}
-.toggle-carousel > span:hover {
+    }
+    .toggle-carousel > span:hover {
     box-shadow: 0px 0px 3px 2px #ffffffaa;
-}
+    }
 
-}
+    .textwrapper {
+        top: 35%;
+        width: 60%;
+    }
+    .text {
+        font-size: 1.4rem;
+    }
 
+    .comment {
+        font-size: 0.8rem;
+}
+}
 </style>
