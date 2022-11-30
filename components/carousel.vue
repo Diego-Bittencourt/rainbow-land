@@ -133,8 +133,9 @@ img {
 }
 
 .active-button {
-    background-color: #0fdb2aa0;
-    box-shadow: 0px 0px 8px 9px #015a01cc;
+    background-color: #830909a0;
+    box-shadow: 0px 0px 8px 9px #be0606cc;
+    border-color: rgb(93, 3, 3);
 }
 .toggle-carousel > span:hover {
     box-shadow: 0px 0px 8px 9px #ffffffaa;
@@ -166,8 +167,7 @@ img {
     }
 
     .active-button {
-    background-color: #0fdb2aa0;
-    box-shadow: 0px 0px 3px 2px #015a01cc;
+    box-shadow: 0px 0px 3px 2px #be0606cc;
 }
 .toggle-carousel > span:hover {
     box-shadow: 0px 0px 3px 2px #ffffffaa;
