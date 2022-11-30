@@ -2,7 +2,7 @@
     <div class="carousel">
         <div class="carousel-inner">
             <div class="toggle-carousel">
-                <span @click="setIndex(photo.index)" v-for="photo of photos" :key="photo.index"></span>
+                <span @click="setIndex(photo.index)" :class="photo.index === currentIndex ? 'active-button' : null" v-for="photo of photos" :key="photo.index"></span>
             </div>
             <div class="carousel-item"  v-for="photo of photos" :key="photo.index" >
                 <transition name="carousel">
@@ -51,6 +51,7 @@ function setIndex(number:number) {
 
 <style scoped>
 
+
 .carousel-enter-from {
     transform: translateX(100vw);
 }
@@ -74,11 +75,13 @@ function setIndex(number:number) {
 }
 .carousel {
     width: 100vw;
-    height: 100vh;
+    max-height: 100vh;
+    height: 65vw;
     overflow: hidden;
     margin: 0;
     padding: 0;
     position: relative;
+    background-color: black;
 }
 
 img {
@@ -87,7 +90,6 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
     width: 100vw;
     height: auto;
 }
@@ -102,12 +104,13 @@ img {
 
 .carousel-inner {
     width: 100vw;
+    height: auto;
 }
 
 .toggle-carousel {
     position: absolute;
-    z-index: 1;
-    top: 90vh;
+    z-index: 10;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     margin: 0 auto;
@@ -116,20 +119,60 @@ img {
     height: 30px;
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
 }
 
-.toggle-carousel > span {
-    background-color: #333333cc;
-    border: 1px solid #ffffffaa;
+.toggle-carousel > * {
+    background-color: #e2e2e288;
+    border: 2px solid #53535384;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin: 0 5px;
     transition: all .1s ease-in;
 }
 
+.active-button {
+    background-color: #0fdb2aa0;
+    box-shadow: 0px 0px 8px 9px #015a01cc;
+}
 .toggle-carousel > span:hover {
     box-shadow: 0px 0px 8px 9px #ffffffaa;
 }
+
+
+@media screen and (max-width: 720px) {
+    .toggle-carousel > * {
+        width: 10px;
+        height: 10px;
+    }
+
+    .toggle-carousel {
+        bottom: 2%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .toggle-carousel > * {
+        width: 8px;
+        height: 8px;
+        border: 1px solid transparent;
+    }
+
+    .toggle-carousel {
+        bottom: 2%;
+        width: auto;
+    }
+
+    .active-button {
+    background-color: #0fdb2aa0;
+    box-shadow: 0px 0px 3px 2px #015a01cc;
+}
+.toggle-carousel > span:hover {
+    box-shadow: 0px 0px 3px 2px #ffffffaa;
+}
+
+}
+
 </style>

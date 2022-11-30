@@ -2,7 +2,7 @@
     <div class="w-full">
         <header class="fixed top-0 w-full bg-emerald-800 bg-opacity-70 ">
             <nav class="flex h-24 w-5/6 m-auto p-4 justify-between">
-                <div class="flex-none"><img src="https://via.placeholder.com/200x70" alt="Rainbow Land Logo"/></div>
+                <div class="flex-none"><img src="/img/rainbow-land-logo.png" alt="Rainbow Land Logo"/></div>
                 <ul class="list-none flex flex-auto items-stretch justify-around ml-24">
                     <NuxtLink to="/index"><li>Home</li></NuxtLink>
                     <NuxtLink to="/about"><li>Info</li></NuxtLink>
@@ -36,4 +36,8 @@ header {
     z-index: 10;
 }
 
+img {
+    height: 100%;
+    width: auto;
+}
 </style>
