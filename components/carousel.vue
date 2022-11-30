@@ -15,6 +15,25 @@
 
 <script lang="ts" setup>
 
+//creating the timer
+let slideTimer:any = null;
+
+onMounted(() => {
+    slideTimer = setInterval(() => {
+        if (currentIndex.value === 6) {
+            currentIndex.value = 1;
+        } else {
+            currentIndex.value++;
+            console.log("interval");
+        }
+    }, 3000)
+    
+});
+
+onUnmounted(() => {
+    clearInterval(slideTimer);
+})
+
 const currentIndex = ref(1);
 
 function setIndex(number:number) {
