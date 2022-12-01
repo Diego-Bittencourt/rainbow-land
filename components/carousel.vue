@@ -43,6 +43,14 @@ const currentIndex = ref(1);
 
 function setIndex(number:number) {
     currentIndex.value = number;
+    clearInterval(slideTimer);
+    slideTimer = setInterval(() => {
+        if (currentIndex.value === 6) {
+            currentIndex.value = 1;
+        } else {
+            currentIndex.value++;
+        }
+    }, 3000)
 };
 
     const photos = ref([
@@ -50,7 +58,7 @@ function setIndex(number:number) {
             index: 1,
             link:'/img/carousel01.png',
             text: 'Rainbow Land',
-            comment: 'WHERE ALL COLORS SHINE'
+            comment: 'Wwhere all the colors shine'
         },
         {
             index: 2,
