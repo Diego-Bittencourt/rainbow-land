@@ -1,5 +1,6 @@
 <template>
     <Carousel />
+    <horizontal />
 </template>
 
 <script setup>
