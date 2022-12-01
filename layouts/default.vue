@@ -21,11 +21,11 @@
 
 <style scoped>
 li {
-    @apply flex items-stretch text-white font-bold text-xl;
+    @apply flex items-stretch font-bold text-xl;
 }
 
 ul {
-    @apply max-w-lg;
+    @apply max-w-lg text-white;
 }
 
 ul > * {
@@ -33,7 +33,7 @@ ul > * {
 }
 
 header {
-    z-index: 10;
+    z-index: 30;
 }
 
 img {
