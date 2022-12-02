@@ -5,6 +5,9 @@ import Components from 'unplugin-vue-components/vite';
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 
 export default defineNuxtConfig({
+  css: [
+    '@fortawesome/fontawesome-svg-core/styles.css'
+  ],
     modules: [
         '@nuxtjs/tailwindcss'
     ],

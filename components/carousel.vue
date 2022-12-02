@@ -58,7 +58,7 @@ function setIndex(number:number) {
             index: 1,
             link:'/img/carousel01.png',
             text: 'Rainbow Land',
-            comment: 'Wwhere all the colors shine'
+            comment: 'Where all the colors shine'
         },
         {
             index: 2,
