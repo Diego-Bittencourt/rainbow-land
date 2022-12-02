@@ -11,7 +11,18 @@
             </nav>
         </header>
         <slot></slot>
-        <footer></footer>
+        <footer class="bg-gray-900 text-white pt-16 px-8 pb-8 border-t-2 border-gray-300">
+            <div class="mr-3 text-sm">
+                <h3 class="text-xl font-bold">Rainbow Land</h3>
+                <p>Something Street</p>
+                <p>Something State</p>
+                <p>New Zealand</p>
+                <p>Postal Code - 000-0000</p>
+            </div>
+            <div class="mr-3">
+                
+            </div>
+        </footer>
     </div>
 </template>
 
