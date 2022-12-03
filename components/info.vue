@@ -28,7 +28,7 @@
 }
 
 .imgbg {
-    background-image: url('../public/img/lakeview.jpeg');
+    background-image: url('../img/lakeview.jpeg');
     background-repeat: no-repeat;
     background-size: 100vw auto;
     background-repeat: none;
