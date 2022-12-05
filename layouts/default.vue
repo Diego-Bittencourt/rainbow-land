@@ -34,7 +34,7 @@
                     <input type="email" class="w-full h-4 block p-4 mb-12 focus:outline-none focus:bg-blue-200 rounded-sm border-gray-400" />
                     <label class="block">Message</label>
                     <textarea class="w-full focus:outline-none focus:bg-blue-200 rounded-sm border-gray-400" rows="6"></textarea>
-                    <button type="submit" class="border-gray-400 rounded-sm mt-8 bg-gray-500 rounded-md py-2 px-4 transition hover:bg-gray-700">Send</button>
+                    <button type="submit" class="border-gray-400 rounded-sm mt-8 bg-gray-500 py-2 px-4 transition hover:bg-gray-700">Send</button>
                 </form>
             </div>
             <div class="mr-3">
